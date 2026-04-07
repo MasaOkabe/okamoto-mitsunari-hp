@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "www.m-okamoto.jp",
         pathname: "/wp-content/**",
       },
+      {
+        protocol: "http",
+        hostname: "www.m-okamoto.jp",
+        pathname: "/wp-content/**",
+      },
     ],
   },
 };

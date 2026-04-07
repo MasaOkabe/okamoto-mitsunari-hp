@@ -12,17 +12,17 @@ export default function Home() {
   ];
 
   const achievementItems = [
-    { title: "「中小企業省力化投資補助金」の創設を実現", date: "2024年6月", image: "https://www.m-okamoto.jp/wp-content/uploads/2024/06/IMG_4614-1024x768.jpeg" },
-    { title: "JRなど鉄道各社の運賃割引制度を精神障がい者までの拡大を実現", date: "2024年4月", image: "https://www.m-okamoto.jp/wp-content/uploads/2024/04/IMG_3655-1024x768.jpeg" },
-    { title: "安心して暮らせる地域づくり。足立区の水害対策で危機感共有WEB会議を導入", date: "2023年12月", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/09/adachi-kikikankyouyuuwebkaigi.png" },
-    { title: "河川敷を活用したスポーツ広場開設を推進", date: "2023年7月", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/07/IMG_1185-1024x768.jpeg" },
-    { title: "交通系ICカード（Suica、PASMO）の障害者割引適用を実現", date: "2023年3月", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/07/IMG_1166.jpeg" },
-    { title: "板橋区新河岸地域の荒川河川敷に階段設置", date: "2023年1月", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/07/IMG_1234-768x1024.jpeg" },
+    { title: "「中小企業省力化投資補助金」の創設を実現", date: "2024年6月25日", image: "https://www.m-okamoto.jp/wp-content/uploads/2024/09/ach_202406.jpg" },
+    { title: "JRなど鉄道各社の運賃割引制度を精神障がい者までの拡大を実現", date: "2024年4月11日", image: "https://www.m-okamoto.jp/wp-content/uploads/2024/09/ach_202404.jpg" },
+    { title: "安心して暮らせる地域づくり。足立区の水害対策で危機感共有WEB会議を導入", date: "2023年12月7日", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/09/adachi-kikikankyouyuuwebkaigi.png" },
+    { title: "河川敷を活用したスポーツ広場開設を推進", date: "2023年7月14日", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/07/IMG_1185-1024x768.jpeg" },
+    { title: "交通系ICカード（Suica、PASMO）の障害者割引適用を実現", date: "2023年3月14日", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/07/IMG_1166.jpeg" },
+    { title: "板橋区新河岸地域の荒川河川敷に階段設置", date: "2023年1月15日", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/07/IMG_1234-768x1024.jpeg" },
   ];
 
   return (
     <div className="min-h-screen bg-[#fdfdfd]">
-      {/* Hero Section - Full width image (text is part of the image) */}
+      {/* Hero Section - Full width image */}
       <section className="relative w-full overflow-hidden">
         <img
           src="https://www.m-okamoto.jp/wp-content/uploads/2026/02/header-main-visual_ver5-scaled.jpg"
@@ -31,50 +31,80 @@ export default function Home() {
         />
       </section>
 
-      {/* Main Content - match SWELL layout: padding 64px 48px 0px */}
+      {/* Main Content */}
       <div style={{ maxWidth: '1296px', margin: '0 auto', padding: '64px 48px 0px' }}>
         <div className="flex flex-col lg:flex-row" style={{ gap: '0' }}>
-          {/* Main Column - 818px equivalent */}
+          {/* Main Column */}
           <div className="flex-1 min-w-0" style={{ marginRight: '76px' }}>
+
             {/* Profile Section */}
             <section style={{ marginBottom: '64px' }}>
               <h2 className="section-heading">プロフィール</h2>
-              <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
-                <div className="flex flex-col md:flex-row" style={{ gap: '32px', padding: '32px' }}>
-                  <div className="flex-shrink-0">
-                    <img
-                      src="https://www.m-okamoto.jp/wp-content/uploads/2021/08/diary_photo_default-400x400-1.jpg"
-                      alt="岡本みつなり"
-                      className="object-cover rounded"
-                      style={{ width: '160px', height: '160px' }}
-                    />
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="font-bold text-[#2054a8]" style={{ fontSize: '20px', marginBottom: '16px' }}>岡本みつなり</h3>
-                    <div className="text-[#333] leading-relaxed" style={{ fontSize: '14px' }}>
-                      <p style={{ marginBottom: '8px' }}><strong>生年月日：</strong> 1965年5月5日</p>
-                      <p style={{ marginBottom: '8px' }}><strong>出身地：</strong> 佐賀県鳥栖市</p>
-                      <p style={{ marginBottom: '8px' }}><strong>現在地：</strong> 東京都荒川区</p>
-                      <p style={{ marginBottom: '8px' }}><strong>学歴：</strong> 創価大学卒業、英国グラスゴー大学留学、米国ケロッグ経営大学院修了(MBA)</p>
-                      <p style={{ marginBottom: '8px' }}><strong>経歴：</strong> シティバンク、ゴールドマン・サックス証券</p>
-                      <p><strong>家族：</strong> 妻と二女</p>
-                    </div>
-                    <div style={{ marginTop: '24px' }}>
-                      <Link href="/profile" className="swell-btn">
-                        詳細プロフィールへ
-                      </Link>
-                    </div>
-                  </div>
+
+              {/* Profile Card - 2 columns: photo left 33%, text right */}
+              <div className="flex flex-col md:flex-row" style={{ backgroundColor: '#f3f8fd', padding: '25.5px', gap: '25.5px', marginBottom: '0' }}>
+                {/* Photo column - 33% */}
+                <div style={{ flexBasis: '33.33%', flexShrink: 0 }}>
+                  <img
+                    src="https://www.m-okamoto.jp/wp-content/uploads/2021/08/diary_photo_default-400x400-1.jpg"
+                    alt="岡本みつなり"
+                    className="w-full h-auto block"
+                    style={{ border: '1px solid #ddd' }}
+                  />
                 </div>
+                {/* Text column */}
+                <div className="flex-1">
+                  <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '8px' }}>
+                    <strong>岡本みつなり</strong>
+                  </p>
+                  <p style={{ fontSize: '15.4px', lineHeight: 2, color: '#333' }}>
+                    誕生日：1965年5月5日<br />
+                    最終学歴：米国・ケロッグ経営大学院（経営学修士）<br />
+                    出身：佐賀県鳥栖市<br />
+                    家族：妻と二女
+                  </p>
+                </div>
+              </div>
+
+              {/* Career section */}
+              <div style={{ marginTop: '24px', marginBottom: '24px' }}>
+                <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '8px' }}>
+                  <strong>略歴</strong>
+                </p>
+                <div style={{ fontSize: '15.4px', lineHeight: 2.2, color: '#333' }}>
+                  <p>1965年　5月5日生まれ</p>
+                  <p>1988年　英国グラスゴー大学留学</p>
+                  <p>1989年　創価大学卒業</p>
+                  <p>1989年　シティバンク勤務</p>
+                  <p>1998年　米国ケロッグ経営大学院修了 経営学修士号取得</p>
+                  <p>1998年　ゴールドマン・サックス証券勤務</p>
+                  <p>2012年　衆議院議員に初当選（比例北関東ブロック）</p>
+                  <p>2017年　外務大臣政務官（～2018年9月）</p>
+                  <p>2019年　党国土交通部会長、衆議院国土交通委員会理事（〜2021年10月）</p>
+                  <p>2020年　党新型コロナウイルス感染症　対策本部副本部長</p>
+                  <p>2021年　衆議院議員4期目に当選（東京12区）</p>
+                  <p>2021年　財務副大臣（〜2022年8月）</p>
+                  <p>2023年　衆議院経済産業委員長（〜2024年9月）</p>
+                  <p>2024年　党政務調査会長、党東京都本部代表（9月〜2026年1月）</p>
+                  <p>2024年　衆議院議員5期目に当選（東京29区）</p>
+                  <p>2026年1月　中道改革連合の結成に参加</p>
+                </div>
+              </div>
+
+              {/* Profile button */}
+              <div className="text-center" style={{ marginTop: '32px' }}>
+                <Link href="/profile" className="swell-block-btn">
+                  詳細プロフィールへ
+                </Link>
               </div>
             </section>
 
-            {/* News Section - SWELL flex layout with 3 columns */}
+            {/* News Section */}
             <section style={{ marginBottom: '64px' }}>
               <h2 className="section-heading">新着ニュース</h2>
               <div className="flex flex-wrap" style={{ margin: '0 -10px' }}>
                 {newsItems.map((item, idx) => (
-                  <div key={idx} style={{ width: 'calc(33.333% - 20px)', margin: '0 10px 20px' }}>
+                  <div key={idx} style={{ width: 'calc(33.333% - 20px)', margin: '0 10px 42px' }}>
                     <Link href="/news" className="block group">
                       <div className="overflow-hidden">
                         <img
@@ -85,26 +115,30 @@ export default function Home() {
                         />
                       </div>
                       <div style={{ padding: '17px 0 0' }}>
-                        <h3 className="font-bold text-[#333] group-hover:text-[#2054a8] transition" style={{ fontSize: '16px', lineHeight: '1.5', marginBottom: '8px' }}>{item.title}</h3>
-                        <time className="text-[#999]" style={{ fontSize: '13px' }}>{item.date}</time>
+                        <h3 style={{ fontSize: '16px', fontWeight: 700, lineHeight: '24px', color: '#333', marginBottom: '0' }} className="group-hover:text-[#2054a8] transition">
+                          {item.title}
+                        </h3>
+                        <div style={{ marginTop: '8px' }}>
+                          <time style={{ fontSize: '11px', color: '#333' }}>{item.date}</time>
+                        </div>
                       </div>
                     </Link>
                   </div>
                 ))}
               </div>
-              <div className="text-center" style={{ marginTop: '40px' }}>
-                <Link href="/news" className="swell-btn">
+              <div className="text-center" style={{ marginTop: '0px' }}>
+                <Link href="/news" className="more-btn">
                   もっとみる
                 </Link>
               </div>
             </section>
 
-            {/* Achievements Section - Same 3-column layout */}
+            {/* Achievements Section */}
             <section style={{ marginBottom: '64px' }}>
               <h2 className="section-heading">実績</h2>
               <div className="flex flex-wrap" style={{ margin: '0 -10px' }}>
                 {achievementItems.map((item, idx) => (
-                  <div key={idx} style={{ width: 'calc(33.333% - 20px)', margin: '0 10px 20px' }}>
+                  <div key={idx} style={{ width: 'calc(33.333% - 20px)', margin: '0 10px 42px' }}>
                     <Link href="/achievements" className="block group">
                       <div className="overflow-hidden">
                         <img
@@ -115,15 +149,19 @@ export default function Home() {
                         />
                       </div>
                       <div style={{ padding: '17px 0 0' }}>
-                        <h3 className="font-bold text-[#333] group-hover:text-[#2054a8] transition" style={{ fontSize: '16px', lineHeight: '1.5', marginBottom: '8px' }}>{item.title}</h3>
-                        <time className="text-[#999]" style={{ fontSize: '13px' }}>{item.date}</time>
+                        <h3 style={{ fontSize: '16px', fontWeight: 700, lineHeight: '24px', color: '#333', marginBottom: '0' }} className="group-hover:text-[#2054a8] transition">
+                          {item.title}
+                        </h3>
+                        <div style={{ marginTop: '8px' }}>
+                          <time style={{ fontSize: '11px', color: '#333' }}>{item.date}</time>
+                        </div>
                       </div>
                     </Link>
                   </div>
                 ))}
               </div>
-              <div className="text-center" style={{ marginTop: '40px' }}>
-                <Link href="/achievements" className="swell-btn">
+              <div className="text-center" style={{ marginTop: '0px' }}>
+                <Link href="/achievements" className="more-btn">
                   もっと見る
                 </Link>
               </div>
@@ -133,14 +171,19 @@ export default function Home() {
             <section style={{ marginBottom: '64px' }}>
               <h2 className="section-heading">岡本みつなりチャンネル</h2>
               <div className="text-center" style={{ padding: '32px 0' }}>
-                <a href="https://www.youtube.com/channel/UCU09evAyoTH4HYC4e1S5qtA" target="_blank" rel="noopener noreferrer" className="swell-btn" style={{ backgroundColor: '#c00', borderColor: '#c00' }}>
+                <a
+                  href="https://www.youtube.com/@TheOfficeMO"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="swell-block-btn"
+                >
                   岡本みつなりチャンネル
                 </a>
               </div>
             </section>
           </div>
 
-          {/* Sidebar - 304px width */}
+          {/* Sidebar */}
           <div className="flex-shrink-0" style={{ width: '304px' }}>
             <Sidebar />
           </div>

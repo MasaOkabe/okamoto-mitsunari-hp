@@ -1,207 +1,165 @@
 import { Sidebar } from "@/components/Sidebar";
-import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { PageTitle } from "@/components/PageTitle";
+
+export const metadata = {
+  title: "プロフィール - 衆議院議員 岡本みつなり",
+};
 
 export default function Profile() {
   return (
     <div className="min-h-screen bg-[#fdfdfd]">
+      <Breadcrumb items={[{ label: 'プロフィール' }]} />
+
       <div style={{ maxWidth: '1296px', margin: '0 auto', padding: '64px 48px 0px' }}>
         <div className="flex flex-col lg:flex-row" style={{ gap: '0' }}>
           <div className="flex-1 min-w-0" style={{ marginRight: '76px' }}>
-            {/* Hero Section with Profile Photo */}
-            <section className="mb-12">
-              <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
+            <PageTitle title="プロフィール" />
+
+            {/* Profile Card - matching original layout: name+info left, photo right */}
+            <div className="bg-[#f7f7f7] rounded" style={{ padding: '40px', marginBottom: '64px' }}>
+              <div className="flex flex-col md:flex-row" style={{ gap: '32px' }}>
+                {/* Text info */}
+                <div className="flex-1">
+                  <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#333', marginBottom: '24px' }}>岡本みつなり</h2>
+                  <div style={{ fontSize: '16px', lineHeight: 2, color: '#333' }}>
+                    <p>誕生日：1965年5月5日</p>
+                    <p>最終学歴：米国・ケロッグ経営大学院（経営学修士）</p>
+                    <p>出身：佐賀県鳥栖市</p>
+                    <p>住まい：東京都荒川区</p>
+                    <p>家族：妻と二女</p>
+                  </div>
+                </div>
+                {/* Photo */}
+                <div className="flex-shrink-0">
+                  <img
+                    src="http://www.m-okamoto.jp/wp-content/uploads/2023/11/profile.jpg"
+                    alt="岡本みつなり"
+                    style={{ width: '270px', height: '270px', objectFit: 'cover', borderRadius: '4px' }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* 三要素 */}
+            <h2 className="section-heading">岡本みつなりの三要素</h2>
+
+            {/* Element I */}
+            <div style={{ marginBottom: '48px' }}>
+              <h3 style={{
+                fontSize: '22px',
+                fontWeight: 700,
+                paddingBottom: '11px',
+                borderBottom: '2px solid #2054a8',
+                marginBottom: '24px',
+                color: '#333',
+              }}>
+                Ⅰ．鋭敏な国際感覚
+              </h3>
+
+              {/* Image */}
+              <div style={{ marginBottom: '24px' }}>
                 <img
-                  src="https://www.m-okamoto.jp/wp-content/uploads/2023/11/profile.jpg"
-                  alt="岡本みつなり"
-                  className="w-full h-96 object-cover"
+                  src="http://www.m-okamoto.jp/wp-content/uploads/2023/11/canada-japan-3-1024x512.png"
+                  alt="国際感覚"
+                  className="w-full"
+                  style={{ height: 'auto' }}
                 />
               </div>
-            </section>
 
-            {/* Basic Info */}
-            <section className="mb-12">
-              <h2 className="section-heading">基本情報</h2>
-              <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
-                <table className="w-full text-sm">
-                  <tbody>
-                    <tr className="border-b border-[#eeeeee]">
-                      <td className="font-bold py-3 px-4 w-32 bg-[#f9f9f9]">氏名</td>
-                      <td className="py-3 px-4">岡本みつなり（岡本三成）</td>
-                    </tr>
-                    <tr className="border-b border-[#eeeeee]">
-                      <td className="font-bold py-3 px-4 bg-[#f9f9f9]">生年月日</td>
-                      <td className="py-3 px-4">1965年5月5日（58歳）</td>
-                    </tr>
-                    <tr className="border-b border-[#eeeeee]">
-                      <td className="font-bold py-3 px-4 bg-[#f9f9f9]">出身地</td>
-                      <td className="py-3 px-4">佐賀県鳥栖市</td>
-                    </tr>
-                    <tr className="border-b border-[#eeeeee]">
-                      <td className="font-bold py-3 px-4 bg-[#f9f9f9]">現在地</td>
-                      <td className="py-3 px-4">東京都荒川区</td>
-                    </tr>
-                    <tr className="border-b border-[#eeeeee]">
-                      <td className="font-bold py-3 px-4 bg-[#f9f9f9]">家族</td>
-                      <td className="py-3 px-4">妻と二女</td>
-                    </tr>
-                    <tr className="border-b border-[#eeeeee]">
-                      <td className="font-bold py-3 px-4 bg-[#f9f9f9]">選挙区</td>
-                      <td className="py-3 px-4">東京都第29区（荒川区・足立区北部）</td>
-                    </tr>
-                    <tr>
-                      <td className="font-bold py-3 px-4 bg-[#f9f9f9]">当選回数</td>
-                      <td className="py-3 px-4">6期</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '16px' }}>
+                幼少期の夢は、「世界をまたにかける男になる」― 佐賀県に生まれ育った岡本は、大学時代に英国へ留学。卒業後、シティバンクに就職したのち、米国の大学院へ進学。経営学修士号を取得後に、ゴールドマン・サックス証券に就職しました。
+              </p>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '16px' }}>
+                金融マンとして、ニューヨークやロンドンなど海外の諸都市に勤務し、公的セクターの財務アドバイザーなどとして活躍。
+              </p>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333' }}>
+                国際金融の最前線で培った鋭敏な知識・経験・ネットワークは、国会議員になった今、これまで以上に役立っています。
+              </p>
+            </div>
+
+            {/* Element II */}
+            <div style={{ marginBottom: '48px' }}>
+              <h3 style={{
+                fontSize: '22px',
+                fontWeight: 700,
+                paddingBottom: '11px',
+                borderBottom: '2px solid #2054a8',
+                marginBottom: '24px',
+                color: '#333',
+              }}>
+                Ⅱ．堅実、そして公正な価値観
+              </h3>
+
+              <div style={{ marginBottom: '24px' }}>
+                <img
+                  src="http://www.m-okamoto.jp/wp-content/uploads/2023/11/yosaniinkai-1024x555.png"
+                  alt="堅実な価値観"
+                  className="w-full"
+                  style={{ height: 'auto' }}
+                />
               </div>
-            </section>
 
-            {/* Education */}
-            <section className="mb-12">
-              <h2 className="section-heading">学歴</h2>
-              <div className="bg-white border border-[#eeeeee] rounded p-8 space-y-4">
-                <div>
-                  <p className="font-bold text-[#333]">創価大学卒業</p>
-                  <p className="text-[#666] text-sm">1984年～1988年</p>
-                </div>
-                <div className="border-t border-[#eeeeee] pt-4">
-                  <p className="font-bold text-[#333]">英国グラスゴー大学留学</p>
-                  <p className="text-[#666] text-sm">1988年～1989年</p>
-                </div>
-                <div className="border-t border-[#eeeeee] pt-4">
-                  <p className="font-bold text-[#333]">米国ケロッグ経営大学院修了（MBA）</p>
-                  <p className="text-[#666] text-sm">2001年～2003年</p>
-                </div>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '16px' }}>
+                実家は小さな建設会社。岡本の土台となっている堅実な経済感覚は、少年時代から、岡本の根幹に培われてきました。
+              </p>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '16px' }}>
+                社会人として、会社で責任ある立場になってからは、「多様性こそが成功のカギ」との信条で、性別や人種の違いにとらわれることなく、有能な人材を積極的に登用。常に業界随一の業績を叩き出しました。
+              </p>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333' }}>
+                地に足の着いた価値観――それが岡本の魅力です。
+              </p>
+            </div>
+
+            {/* Element III */}
+            <div style={{ marginBottom: '48px' }}>
+              <h3 style={{
+                fontSize: '22px',
+                fontWeight: 700,
+                paddingBottom: '11px',
+                borderBottom: '2px solid #2054a8',
+                marginBottom: '24px',
+                color: '#333',
+              }}>
+                Ⅲ．社会貢献への決意
+              </h3>
+
+              <div style={{ marginBottom: '24px' }}>
+                <img
+                  src="http://www.m-okamoto.jp/wp-content/uploads/2021/04/profile_career2.jpg"
+                  alt="社会貢献への決意"
+                  className="w-full"
+                  style={{ height: 'auto' }}
+                />
               </div>
-            </section>
 
-            {/* Career */}
-            <section className="mb-12">
-              <h2 className="section-heading">職歴</h2>
-              <div className="bg-white border border-[#eeeeee] rounded p-8 space-y-4">
-                <div>
-                  <p className="font-bold text-[#333]">シティバンク</p>
-                  <p className="text-[#666] text-sm">1988年～1998年</p>
-                  <p className="text-xs text-[#999]">東京支店、NY支店、シンガポール支店に勤務</p>
-                </div>
-                <div className="border-t border-[#eeeeee] pt-4">
-                  <p className="font-bold text-[#333]">ゴールドマン・サックス証券</p>
-                  <p className="text-[#666] text-sm">1998年～2003年</p>
-                  <p className="text-xs text-[#999]">インベストメント・バンキング部門</p>
-                </div>
-              </div>
-            </section>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '16px' }}>
+                なぜ、日本の国政に取り組むのか――それは、平和の党・公明党の立党精神「大衆とともに」に、心から賛同したからです。
+              </p>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333', marginBottom: '16px' }}>
+                生まれ育った佐賀から、世界へ活躍の場を広げ、国際金融の最前線で活躍していた岡本は、米国同時多発テロ等も経験し、日本の明るい未来と、世界平和の構築のため、国会議員になる事を決意しました。
+              </p>
+              <p style={{ fontSize: '15.4px', lineHeight: 1.8, color: '#333' }}>
+                2012年12月の衆議院議員選挙に公明党（比例区北関東ブロック）候補として立候補し、初当選し、現在4期目です。
+              </p>
+            </div>
 
-            {/* Core Values */}
-            <section className="mb-12">
-              <h2 className="section-heading">三つの信念</h2>
-              <div className="space-y-6">
-                {/* Value 1 */}
-                <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
-                  <div className="flex flex-col md:flex-row gap-6 p-8">
-                    <div className="flex-shrink-0 w-full md:w-48">
-                      <img
-                        src="https://www.m-okamoto.jp/wp-content/uploads/2023/11/canada-japan-3-1024x512.png"
-                        alt="世界で培った国際感覚"
-                        className="w-full h-32 object-cover rounded"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-[#2054a8] mb-3">世界で培った国際感覚</h3>
-                      <p className="text-[#666] text-sm leading-relaxed">
-                        シティバンク、ゴールドマン・サックス証券での勤務を通じて、世界の金融市場を見つめてきました。国連改革、グローバルヘルス、核融合エネルギーなど、日本と世界の繋がりを強く意識した政策を推進します。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Value 2 */}
-                <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
-                  <div className="flex flex-col md:flex-row gap-6 p-8">
-                    <div className="flex-shrink-0 w-full md:w-48">
-                      <img
-                        src="https://www.m-okamoto.jp/wp-content/uploads/2021/04/profile_career2.jpg"
-                        alt="堅実な価値観"
-                        className="w-full h-32 object-cover rounded"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-[#2054a8] mb-3">堅実な価値観</h3>
-                      <p className="text-[#666] text-sm leading-relaxed">
-                        経営大学院で学んだ論理的思考と金融現場での経験を基に、確実で持続可能な政策立案を心がけています。NISA・iDeCo拡充、最低賃金引き上げなど、庶民の安定的な資産形成と生活向上を支援します。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Value 3 */}
-                <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
-                  <div className="flex flex-col md:flex-row gap-6 p-8">
-                    <div className="flex-shrink-0 w-full md:w-48">
-                      <div className="w-full h-32 bg-[#2054a8] rounded flex items-center justify-center text-white font-bold text-center px-4">
-                        社会貢献への想い
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-[#2054a8] mb-3">社会貢献</h3>
-                      <p className="text-[#666] text-sm leading-relaxed">
-                        政治家としての使命は、一人ひとりの人生を豊かにすること。荒川河川敷に階段を整備、聴覚障害者支援、スポーツ広場の開設など、地元での活動を大切にしています。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Timeline */}
-            <section className="mb-12">
-              <h2 className="section-heading">経歴・当選履歴</h2>
-              <div className="bg-white border border-[#eeeeee] rounded p-8">
-                <div className="space-y-3 text-sm">
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">1965年</div>
-                    <div className="text-[#666]">誕生</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">1988年</div>
-                    <div className="text-[#666]">創価大学卒業、シティバンク入行</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2001年</div>
-                    <div className="text-[#666]">ケロッグ経営大学院入学（MBA取得）</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2003年</div>
-                    <div className="text-[#666]">ゴールドマン・サックス証券退職</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2005年</div>
-                    <div className="text-[#666]">第1回当選（東京都第29区）</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2009年</div>
-                    <div className="text-[#666]">第2回当選</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2012年</div>
-                    <div className="text-[#666]">第3回当選</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2014年</div>
-                    <div className="text-[#666]">第4回当選</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2017年</div>
-                    <div className="text-[#666]">第5回当選</div>
-                  </div>
-                  <div className="flex gap-4 border-l-2 border-[#2054a8] pl-4">
-                    <div className="font-bold text-[#2054a8] min-w-max">2021年</div>
-                    <div className="text-[#666]">第6回当選</div>
-                  </div>
-                </div>
-              </div>
-            </section>
+            {/* 経歴 */}
+            <h2 className="section-heading">経歴</h2>
+            <div style={{ fontSize: '15.4px', lineHeight: 2.2, color: '#333', marginBottom: '64px' }}>
+              <p>1965年　5月5日生まれ</p>
+              <p>1988年　英国グラスゴー大学留学</p>
+              <p>1989年　創価大学卒業</p>
+              <p>1989年　シティバンク勤務</p>
+              <p>1998年　米国ケロッグ経営大学院修了 経営学修士号取得</p>
+              <p>1998年　ゴールドマン・サックス証券勤務</p>
+              <p>2012年　衆議院議員に初当選（比例北関東ブロック）</p>
+              <p>2017年　外務大臣政務官（～2018年9月）</p>
+              <p>2019年　党国土交通部会長、衆議院国土交通委員会理事（〜2021年10月）</p>
+              <p>2021年　衆議院議員に4期目の当選（東京29区）</p>
+              <p>2021年　衆議院財務金融委員会理事（～2024年10月）</p>
+              <p>2024年　衆議院議院運営委員会理事</p>
+            </div>
           </div>
 
           {/* Sidebar */}

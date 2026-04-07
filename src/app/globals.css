@@ -166,3 +166,39 @@ table th {
 .group:hover img {
   opacity: 0.8;
 }
+
+/* SWELL block button - matching original site exactly */
+.swell-block-btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff !important;
+  padding: 17px 25.5px;
+  border-radius: 80px;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.swell-block-btn:hover {
+  opacity: 0.8;
+}
+
+/* "もっとみる" link style matching SWELL */
+.more-btn {
+  display: inline-block;
+  color: #666 !important;
+  font-size: 16.2px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #666;
+  transition: all 0.3s ease;
+}
+
+.more-btn:hover {
+  color: var(--primary) !important;
+  border-bottom-color: var(--primary);
+}
