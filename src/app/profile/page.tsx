@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function Profile() {
   return (
     <div className="min-h-screen bg-[#fdfdfd]">
-      <div className="max-w-[1296px] mx-auto px-12 py-12">
-        <div className="flex flex-col lg:flex-row gap-12">
-          <div className="flex-1 min-w-0">
+      <div style={{ maxWidth: '1296px', margin: '0 auto', padding: '64px 48px 0px' }}>
+        <div className="flex flex-col lg:flex-row" style={{ gap: '0' }}>
+          <div className="flex-1 min-w-0" style={{ marginRight: '76px' }}>
             {/* Hero Section with Profile Photo */}
             <section className="mb-12">
               <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
@@ -205,7 +205,7 @@ export default function Profile() {
           </div>
 
           {/* Sidebar */}
-          <div className="w-full lg:w-[304px] flex-shrink-0">
+          <div className="flex-shrink-0" style={{ width: '304px' }}>
             <Sidebar />
           </div>
         </div>

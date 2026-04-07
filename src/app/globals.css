@@ -31,7 +31,7 @@ body {
   color: var(--text-primary);
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 15.4px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,12 +42,8 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
-  color: var(--primary-light);
+  color: inherit;
   transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--primary);
 }
 
 button {
@@ -59,12 +55,33 @@ button {
 .section-heading {
   background-color: var(--primary);
   color: #ffffff;
-  padding: 18px 24px;
-  font-size: 22px;
+  padding: 17.85px 23.8px;
+  font-size: 23.8px;
   font-weight: 700;
-  margin-bottom: 48px;
+  margin-bottom: 47.6px;
   border-radius: 0;
   display: block;
+  line-height: 1.2;
+}
+
+/* SWELL button style */
+.swell-btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff !important;
+  padding: 12px 60px;
+  border: 1px solid var(--primary);
+  border-radius: 80px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.swell-btn:hover {
+  background-color: transparent;
+  color: var(--primary) !important;
 }
 
 /* Card styles matching SWELL */
@@ -103,50 +120,21 @@ button {
 
 /* Button styles */
 .btn-primary {
+  display: inline-block;
   background-color: var(--primary);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-weight: 600;
-  border: none;
+  color: white !important;
+  padding: 12px 60px;
+  border-radius: 80px;
+  font-weight: 500;
+  border: 1px solid var(--primary);
   transition: all 0.3s ease;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-light);
-  box-shadow: 0 4px 12px rgba(32, 84, 168, 0.2);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
+  background-color: transparent;
+  color: var(--primary) !important;
 }
 
 /* Typography */
@@ -172,4 +160,9 @@ table td {
 table th {
   background-color: var(--background);
   font-weight: 600;
+}
+
+/* Image hover effect for cards */
+.group:hover img {
+  opacity: 0.8;
 }
