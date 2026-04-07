@@ -3,12 +3,12 @@ import { Sidebar } from "@/components/Sidebar";
 
 export default function Home() {
   const newsItems = [
-    { title: "各国大使と面談", date: "2026.04.03", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/04/0-1-1024x768.jpg" },
-    { title: "予算委員会質疑", date: "2026.03.20", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/03/☆予算委員会_2-1024x683.jpeg" },
-    { title: "新代表選出", date: "2026.03.15", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/03/HBA69FpbsAAMsNy-1024x591.jpeg" },
-    { title: "御礼", date: "2021.10.20", image: "https://www.m-okamoto.jp/wp-content/uploads/2021/10/ホームページ１枚目-中-1024x579.jpg" },
-    { title: "中道改革連合", date: "2023.09.10", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/09/main-1-agenda-1-1024x579.png" },
-    { title: "地元にて新年ご挨拶", date: "2026.01.15", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/01/G993tijbcAQUirL.jpeg" },
+    { title: "各国大使と面談", date: "2026.03.26", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/04/0-1-1024x768.jpg" },
+    { title: "予算委員会質疑", date: "2026.02.27", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/03/☆予算委員会_2-1024x683.jpeg" },
+    { title: "新代表選出", date: "2026.02.13", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/03/HBA69FpbsAAMsNy-1024x591.jpeg" },
+    { title: "御礼", date: "2026.02.09", image: "https://www.m-okamoto.jp/wp-content/uploads/2021/10/ホームページ１枚目-中-1024x579.jpg" },
+    { title: "中道改革連合", date: "2026.01.22", image: "https://www.m-okamoto.jp/wp-content/uploads/2023/09/main-1-agenda-1-1024x579.png" },
+    { title: "地元にて新年ご挨拶", date: "2026.01.06", image: "https://www.m-okamoto.jp/wp-content/uploads/2026/01/G993tijbcAQUirL.jpeg" },
   ];
 
   const achievementItems = [
@@ -22,19 +22,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#fdfdfd]">
-      {/* Hero Section */}
-      <section className="relative w-full h-96 md:h-[500px] overflow-hidden">
+      {/* Hero Section - NO dark overlay */}
+      <section className="relative w-full overflow-hidden bg-gray-200">
         <img
           src="https://www.m-okamoto.jp/wp-content/uploads/2026/02/header-main-visual_ver5-scaled.jpg"
           alt="日本を、もっと前へ。"
-          className="w-full h-full object-cover"
+          className="w-full h-auto object-cover md:h-screen md:object-center"
+          style={{ maxHeight: '86vh' }}
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">日本を、もっと前へ。</h1>
-            <p className="text-xl md:text-2xl">衆議院議員 岡本みつなり</p>
-          </div>
-        </div>
       </section>
 
       {/* Main Content */}
@@ -44,18 +39,18 @@ export default function Home() {
           <div className="lg:col-span-2">
             {/* Profile Section */}
             <section className="mb-12">
-              <div className="section-heading">プロフィール</div>
-              <div className="bg-white p-8 rounded">
-                <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="flex-shrink-0">
+              <h2 className="section-heading">プロフィール</h2>
+              <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
+                <div className="flex flex-col md:flex-row gap-8 p-8">
+                  <div className="flex-shrink-0 w-full md:w-40">
                     <img
                       src="https://www.m-okamoto.jp/wp-content/uploads/2021/08/diary_photo_default-400x400-1.jpg"
                       alt="岡本みつなり"
-                      className="w-40 h-40 rounded object-cover"
+                      className="w-full md:w-40 h-40 rounded object-cover"
                     />
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-2xl font-bold text-[#2054a8] mb-4">岡本みつなり</h3>
+                    <h3 className="text-xl font-bold text-[#2054a8] mb-4">岡本みつなり</h3>
                     <div className="text-sm space-y-2 text-[#333]">
                       <p><strong>生年月日：</strong> 1965年5月5日</p>
                       <p><strong>出身地：</strong> 佐賀県鳥栖市</p>
@@ -64,7 +59,7 @@ export default function Home() {
                       <p><strong>経歴：</strong> シティバンク、ゴールドマン・サックス証券</p>
                       <p><strong>家族：</strong> 妻と二女</p>
                     </div>
-                    <Link href="/profile" className="inline-block mt-6 text-[#2054a8] font-bold hover:opacity-80">
+                    <Link href="/profile" className="inline-block mt-6 text-[#1176d4] font-bold hover:text-[#2054a8] transition">
                       詳細プロフィールへ →
                     </Link>
                   </div>
@@ -74,11 +69,11 @@ export default function Home() {
 
             {/* News Section */}
             <section className="mb-12">
-              <div className="section-heading">新着ニュース</div>
+              <h2 className="section-heading">新着ニュース</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {newsItems.map((item, idx) => (
                   <div key={idx} className="bg-white rounded overflow-hidden card-hover border border-[#eeeeee]">
-                    <div className="aspect-video overflow-hidden bg-gray-200">
+                    <div className="aspect-video overflow-hidden bg-[#f0f0f0]">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -86,9 +81,9 @@ export default function Home() {
                       />
                     </div>
                     <div className="p-4">
-                      <p className="text-xs text-gray-500 mb-2">{item.date}</p>
-                      <h4 className="font-bold text-[#333] line-clamp-2 mb-2">{item.title}</h4>
-                      <Link href="#" className="text-[#2054a8] text-sm font-medium hover:opacity-80">
+                      <p className="text-xs text-[#999] mb-2">{item.date}</p>
+                      <h4 className="font-bold text-[#333] line-clamp-2 mb-3">{item.title}</h4>
+                      <Link href="#" className="text-[#1176d4] text-sm font-medium hover:text-[#2054a8] transition">
                         詳しく読む →
                       </Link>
                     </div>
@@ -96,7 +91,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="text-center mt-8">
-                <Link href="/news" className="inline-block bg-[#2054a8] text-white px-6 py-2 rounded hover:opacity-90 font-medium">
+                <Link href="/news" className="btn-primary">
                   もっとみる
                 </Link>
               </div>
@@ -104,11 +99,11 @@ export default function Home() {
 
             {/* Achievements Section */}
             <section className="mb-12">
-              <div className="section-heading">実績</div>
+              <h2 className="section-heading">実績</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {achievementItems.map((item, idx) => (
                   <div key={idx} className="bg-white rounded overflow-hidden card-hover border border-[#eeeeee]">
-                    <div className="aspect-video overflow-hidden bg-gray-200">
+                    <div className="aspect-video overflow-hidden bg-[#f0f0f0]">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -116,9 +111,9 @@ export default function Home() {
                       />
                     </div>
                     <div className="p-4">
-                      <p className="text-xs text-gray-500 mb-2">{item.date}</p>
-                      <h4 className="font-bold text-[#333] line-clamp-2 mb-2">{item.title}</h4>
-                      <Link href="#" className="text-[#2054a8] text-sm font-medium hover:opacity-80">
+                      <p className="text-xs text-[#999] mb-2">{item.date}</p>
+                      <h4 className="font-bold text-[#333] line-clamp-2 mb-3">{item.title}</h4>
+                      <Link href="#" className="text-[#1176d4] text-sm font-medium hover:text-[#2054a8] transition">
                         詳しく見る →
                       </Link>
                     </div>
@@ -126,7 +121,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="text-center mt-8">
-                <Link href="/achievements" className="inline-block bg-[#2054a8] text-white px-6 py-2 rounded hover:opacity-90 font-medium">
+                <Link href="/achievements" className="btn-primary">
                   もっと見る
                 </Link>
               </div>
@@ -134,10 +129,10 @@ export default function Home() {
 
             {/* YouTube Section */}
             <section className="mb-12">
-              <div className="section-heading">岡本みつなりチャンネル</div>
-              <div className="bg-white p-8 rounded text-center">
-                <p className="text-gray-600 mb-4">YouTubeで最新の活動をご覧いただけます</p>
-                <a href="#" className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:opacity-90 font-medium">
+              <h2 className="section-heading">岡本みつなりチャンネル</h2>
+              <div className="bg-white border border-[#eeeeee] rounded p-8 text-center">
+                <p className="text-[#666] mb-6">YouTubeで最新の活動をご覧いただけます</p>
+                <a href="#" className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium transition">
                   YouTubeをご覧になる
                 </a>
               </div>

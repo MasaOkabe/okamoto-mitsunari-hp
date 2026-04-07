@@ -83,8 +83,8 @@ export default function AchievementsPage() {
           <div className="lg:col-span-2">
             {/* Title */}
             <section className="mb-12">
-              <h1 className="text-4xl font-bold text-[#2054a8] mb-4">実績</h1>
-              <p className="text-gray-600">衆議院議員として実現した政策と成果</p>
+              <h1 className="text-3xl font-bold text-[#2054a8] mb-2">実績</h1>
+              <p className="text-[#666] text-sm">衆議院議員として実現した政策と成果</p>
             </section>
 
             {/* Main Achievements Grid */}
@@ -92,13 +92,13 @@ export default function AchievementsPage() {
               {achievements.map((achievement, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded border border-[#eeeeee] p-6 hover:shadow-md transition card-hover"
+                  className="bg-white rounded border border-[#eeeeee] p-6 card-hover"
                 >
                   <div className="text-4xl mb-3">{achievement.icon}</div>
-                  <p className="text-xs text-gray-500 mb-2">{achievement.date}</p>
-                  <h3 className="font-bold text-[#333] mb-3 line-clamp-2">{achievement.title}</h3>
-                  <p className="text-sm text-gray-700">{achievement.description}</p>
-                  <Link href="#" className="text-[#2054a8] text-sm font-medium mt-4 inline-block hover:opacity-80">
+                  <p className="text-xs text-[#999] mb-2">{achievement.date}</p>
+                  <h3 className="font-bold text-[#333] mb-3 line-clamp-2 text-sm">{achievement.title}</h3>
+                  <p className="text-xs text-[#666] leading-relaxed mb-4">{achievement.description}</p>
+                  <Link href="#" className="text-[#1176d4] text-xs font-medium hover:text-[#2054a8] transition inline-block">
                     詳細 →
                   </Link>
                 </div>
@@ -107,16 +107,16 @@ export default function AchievementsPage() {
 
             {/* Categories */}
             <section className="mb-12">
-              <div className="section-heading">分野別実績</div>
+              <h2 className="section-heading">分野別実績</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {categories.map((category, idx) => (
-                  <div key={idx} className="bg-white rounded p-6 border border-[#eeeeee]">
-                    <h3 className="font-bold text-[#2054a8] mb-4">{category.title}</h3>
+                  <div key={idx} className="bg-white rounded border border-[#eeeeee] p-6">
+                    <h3 className="font-bold text-[#2054a8] mb-4 text-sm">{category.title}</h3>
                     <ul className="space-y-2">
                       {category.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex items-start text-sm">
+                        <li key={itemIdx} className="flex items-start text-xs">
                           <span className="inline-block w-1.5 h-1.5 bg-[#2054a8] rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
-                          <span className="text-gray-700">{item}</span>
+                          <span className="text-[#666]">{item}</span>
                         </li>
                       ))}
                     </ul>

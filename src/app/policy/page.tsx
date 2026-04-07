@@ -83,38 +83,38 @@ export default function PolicyPage() {
           <div className="lg:col-span-2">
             {/* Title */}
             <section className="mb-12">
-              <h1 className="text-4xl font-bold text-[#2054a8] mb-4">目指す政策</h1>
-              <p className="text-gray-600">日本を、もっと前へ。</p>
+              <h1 className="text-3xl font-bold text-[#2054a8] mb-2">目指す政策</h1>
+              <p className="text-[#666] text-sm">日本を、もっと前へ。</p>
             </section>
 
             {/* Core Message */}
             <section className="mb-12">
               <div className="bg-white p-8 rounded border border-[#eeeeee]">
-                <h2 className="text-2xl font-bold text-[#2054a8] mb-4">政治理念</h2>
-                <p className="text-gray-700 mb-4">
+                <h2 className="text-lg font-bold text-[#2054a8] mb-4">政治理念</h2>
+                <p className="text-[#666] text-sm mb-4 leading-relaxed">
                   2001年9月11日、ニューヨークで同時多発テロを目撃しました。その時、政治の力で世界を、日本を、地域を変えたいという想いが生まれました。
                 </p>
-                <p className="text-xl font-bold text-[#2054a8]">「中道ど真ん中」の政治で日本を、もっと前へ。</p>
+                <p className="text-lg font-bold text-[#2054a8]">「中道ど真ん中」の政治で日本を、もっと前へ。</p>
               </div>
             </section>
 
             {/* Policy Pillars */}
             <section className="mb-12">
-              <div className="section-heading">政策の四本柱</div>
+              <h2 className="section-heading">政策の四本柱</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {policies.map((policy, idx) => (
                   <div key={idx} className="bg-white rounded border border-[#eeeeee] overflow-hidden">
                     <div className="bg-[#2054a8] text-white p-6 text-center">
                       <div className="text-4xl mb-2">{policy.icon}</div>
-                      <h3 className="font-bold text-lg">{policy.title}</h3>
-                      <p className="text-sm text-blue-100 mt-1">{policy.tagline}</p>
+                      <h3 className="font-bold text-sm">{policy.title}</h3>
+                      <p className="text-xs text-blue-100 mt-1">{policy.tagline}</p>
                     </div>
                     <div className="p-6">
                       <ul className="space-y-2">
                         {policy.items.map((item, itemIdx) => (
-                          <li key={itemIdx} className="flex items-start text-sm">
-                            <span className="inline-block w-1.5 h-1.5 bg-[#2054a8] rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
-                            <span className="text-gray-700">{item}</span>
+                          <li key={itemIdx} className="flex items-start text-xs">
+                            <span className="inline-block w-1.5 h-1.5 bg-[#2054a8] rounded-full mt-1 mr-2 flex-shrink-0"></span>
+                            <span className="text-[#666]">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -126,18 +126,18 @@ export default function PolicyPage() {
 
             {/* Governance Philosophy */}
             <section className="mb-12">
-              <div className="section-heading">政治姿勢と経済哲学</div>
+              <h2 className="section-heading">政治姿勢と経済哲学</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {governance.map((section, idx) => (
                   <div key={idx} className="bg-white rounded border border-[#eeeeee] p-6">
-                    <h3 className="font-bold text-[#2054a8] mb-4 pb-2 border-b border-[#eeeeee]">
+                    <h3 className="font-bold text-[#2054a8] mb-4 pb-2 border-b border-[#eeeeee] text-sm">
                       {section.title}
                     </h3>
                     <ul className="space-y-3">
                       {section.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex items-start text-sm">
-                          <span className="inline-block w-1.5 h-1.5 bg-[#2054a8] rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
-                          <span className="text-gray-700">{item}</span>
+                        <li key={itemIdx} className="flex items-start text-xs">
+                          <span className="inline-block w-1.5 h-1.5 bg-[#2054a8] rounded-full mt-1 mr-2 flex-shrink-0"></span>
+                          <span className="text-[#666]">{item}</span>
                         </li>
                       ))}
                     </ul>

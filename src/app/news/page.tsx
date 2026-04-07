@@ -86,8 +86,8 @@ export default function NewsPage() {
           <div className="lg:col-span-2">
             {/* Title */}
             <section className="mb-12">
-              <h1 className="text-4xl font-bold text-[#2054a8] mb-4">ニュース一覧</h1>
-              <p className="text-gray-600">最新の活動報告とお知らせ</p>
+              <h1 className="text-3xl font-bold text-[#2054a8] mb-2">ニュース一覧</h1>
+              <p className="text-[#666] text-sm">最新の活動報告とお知らせ</p>
             </section>
 
             {/* News List */}
@@ -95,21 +95,23 @@ export default function NewsPage() {
               {newsItems.map((news, idx) => (
                 <article
                   key={idx}
-                  className="border border-[#eeeeee] rounded p-6 hover:shadow-md transition bg-white"
+                  className="border border-[#eeeeee] rounded card-hover bg-white overflow-hidden"
                 >
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <p className="text-sm text-gray-500 mb-1">{news.date}</p>
-                      <h2 className="text-lg font-bold text-[#333]">{news.title}</h2>
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-3 gap-4">
+                      <div>
+                        <p className="text-xs text-[#999] mb-2">{news.date}</p>
+                        <h2 className="text-base font-bold text-[#333]">{news.title}</h2>
+                      </div>
+                      <span className="category-badge flex-shrink-0">
+                        {news.category}
+                      </span>
                     </div>
-                    <span className="px-3 py-1 bg-[#f0f0f0] text-[#2054a8] text-xs rounded font-medium whitespace-nowrap ml-4">
-                      {news.category}
-                    </span>
+                    <p className="text-[#666] text-sm mb-4 leading-relaxed">{news.content}</p>
+                    <Link href="#" className="text-[#1176d4] text-sm font-medium hover:text-[#2054a8] transition">
+                      詳細を読む →
+                    </Link>
                   </div>
-                  <p className="text-gray-700 text-sm mb-4">{news.content}</p>
-                  <Link href="#" className="text-[#2054a8] text-sm font-medium hover:opacity-80">
-                    詳細を読む →
-                  </Link>
                 </article>
               ))}
             </div>
