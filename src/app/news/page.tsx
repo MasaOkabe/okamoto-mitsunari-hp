@@ -1,4 +1,5 @@
-"use client";
+import { Sidebar } from "@/components/Sidebar";
+import Link from "next/link";
 
 export default function NewsPage() {
   const newsItems = [
@@ -79,91 +80,47 @@ export default function NewsPage() {
   const categories = ["すべて", "国際交流", "議会活動", "党務", "お知らせ", "地域活動", "政策"];
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1a3a6b] to-[#2d5fa8] text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">ニュース</h1>
-          <p className="text-xl text-blue-100">最新の活動報告とお知らせ</p>
-        </div>
-      </section>
+    <div className="min-h-screen bg-[#fdfdfd]">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            {/* Title */}
+            <section className="mb-12">
+              <h1 className="text-4xl font-bold text-[#2054a8] mb-4">ニュース一覧</h1>
+              <p className="text-gray-600">最新の活動報告とお知らせ</p>
+            </section>
 
-      {/* Category Filter */}
-      <section className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className="px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-[#1a3a6b] hover:text-white hover:border-[#1a3a6b] transition"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* News List */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6">
-            {newsItems.map((news, idx) => (
-              <article
-                key={idx}
-                className="border border-gray-200 rounded-lg p-6 md:p-8 hover:shadow-lg transition"
-              >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-6 mb-4">
-                  <div>
-                    <p className="text-sm font-semibold text-gray-500 mb-2">{news.date}</p>
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#1a3a6b] mb-3">
-                      {news.title}
-                    </h2>
+            {/* News List */}
+            <div className="space-y-6">
+              {newsItems.map((news, idx) => (
+                <article
+                  key={idx}
+                  className="border border-[#eeeeee] rounded p-6 hover:shadow-md transition bg-white"
+                >
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">{news.date}</p>
+                      <h2 className="text-lg font-bold text-[#333]">{news.title}</h2>
+                    </div>
+                    <span className="px-3 py-1 bg-[#f0f0f0] text-[#2054a8] text-xs rounded font-medium whitespace-nowrap ml-4">
+                      {news.category}
+                    </span>
                   </div>
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-[#1a3a6b] rounded-full text-sm font-semibold whitespace-nowrap">
-                    {news.category}
-                  </span>
-                </div>
+                  <p className="text-gray-700 text-sm mb-4">{news.content}</p>
+                  <Link href="#" className="text-[#2054a8] text-sm font-medium hover:opacity-80">
+                    詳細を読む →
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
 
-                <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  {news.content}
-                </p>
-
-                <a href="#" className="inline-block text-[#1a3a6b] font-semibold hover:text-[#2d5fa8] transition">
-                  詳細を読む →
-                </a>
-              </article>
-            ))}
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <Sidebar />
           </div>
         </div>
-      </section>
-
-      {/* Newsletter Subscription */}
-      <section className="bg-gradient-to-r from-[#1a3a6b] to-[#2d5fa8] text-white py-16 md:py-24">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">最新ニュースを受け取る</h2>
-          <p className="text-lg text-blue-100 mb-8">
-            重要なお知らせとニュースを、メールでお届けいたします。
-          </p>
-          <form className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="メールアドレスを入力"
-              className="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none"
-              required
-            />
-            <button
-              type="submit"
-              className="px-8 py-3 bg-white text-[#1a3a6b] rounded-lg font-bold hover:bg-gray-100 transition"
-            >
-              購読
-            </button>
-          </form>
-          <p className="text-sm text-blue-100 mt-4">
-            プライバシーポリシーに同意して購読します。
-          </p>
-        </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

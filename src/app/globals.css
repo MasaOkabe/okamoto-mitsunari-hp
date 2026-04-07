@@ -1,18 +1,17 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap');
 
 :root {
-  --primary: #1a3a6b;
-  --primary-light: #2d5fa8;
-  --background: #ffffff;
-  --foreground: #171717;
-  --text-muted: #6b7280;
+  --primary: #2054a8;
+  --background: #fdfdfd;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #eeeeee;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground: var(--text-primary);
 }
 
 * {
@@ -27,24 +26,49 @@ html {
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: var(--text-primary);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
+  color: var(--text-primary);
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--primary);
   transition: color 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
 }
 
 button {
   transition: all 0.3s ease;
+}
+
+/* Blue section headings */
+.section-heading {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 12px rgba(32, 84, 168, 0.1);
+  transform: translateY(-2px);
 }
 
 @keyframes fadeInUp {
