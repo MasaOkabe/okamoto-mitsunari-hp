@@ -55,17 +55,16 @@ button {
   cursor: pointer;
 }
 
-/* SWELL-style section headings with left blue border */
+/* SWELL-style section headings - full blue bar with white text */
 .section-heading {
-  border-left: 3px solid var(--primary);
-  background-color: transparent;
-  color: var(--text-primary);
-  padding: 12px 0 12px 20px;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 18px 24px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 48px;
+  border-radius: 0;
+  display: block;
 }
 
 /* Card styles matching SWELL */

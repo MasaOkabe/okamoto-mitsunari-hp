@@ -22,36 +22,35 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#fdfdfd]">
-      {/* Hero Section - NO dark overlay */}
-      <section className="relative w-full overflow-hidden bg-gray-200">
+      {/* Hero Section - Full width image, no overlay */}
+      <section className="relative w-full overflow-hidden">
         <img
           src="https://www.m-okamoto.jp/wp-content/uploads/2026/02/header-main-visual_ver5-scaled.jpg"
-          alt="日本を、もっと前へ。"
-          className="w-full h-auto object-cover md:h-screen md:object-center"
-          style={{ maxHeight: '86vh' }}
+          alt="日本を、もっと前へ。衆議院議員 岡本みつなり"
+          className="w-full h-auto block"
         />
       </section>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Column */}
-          <div className="lg:col-span-2">
+      {/* Main Content - match SWELL layout: max-width 1296px, padding 48px */}
+      <div className="max-w-[1296px] mx-auto px-12 py-16">
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Main Column - 818px equivalent */}
+          <div className="flex-1 min-w-0">
             {/* Profile Section */}
-            <section className="mb-12">
+            <section className="mb-16">
               <h2 className="section-heading">プロフィール</h2>
               <div className="bg-white border border-[#eeeeee] rounded overflow-hidden">
                 <div className="flex flex-col md:flex-row gap-8 p-8">
-                  <div className="flex-shrink-0 w-full md:w-40">
+                  <div className="flex-shrink-0">
                     <img
                       src="https://www.m-okamoto.jp/wp-content/uploads/2021/08/diary_photo_default-400x400-1.jpg"
                       alt="岡本みつなり"
-                      className="w-full md:w-40 h-40 rounded object-cover"
+                      className="w-40 h-40 rounded object-cover"
                     />
                   </div>
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-[#2054a8] mb-4">岡本みつなり</h3>
-                    <div className="text-sm space-y-2 text-[#333]">
+                    <div className="text-sm space-y-2 text-[#333] leading-relaxed">
                       <p><strong>生年月日：</strong> 1965年5月5日</p>
                       <p><strong>出身地：</strong> 佐賀県鳥栖市</p>
                       <p><strong>現在地：</strong> 東京都荒川区</p>
@@ -67,12 +66,12 @@ export default function Home() {
               </div>
             </section>
 
-            {/* News Section */}
-            <section className="mb-12">
+            {/* News Section - 3 columns on PC */}
+            <section className="mb-16">
               <h2 className="section-heading">新着ニュース</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {newsItems.map((item, idx) => (
-                  <div key={idx} className="bg-white rounded overflow-hidden card-hover border border-[#eeeeee]">
+                  <div key={idx} className="bg-white rounded overflow-hidden card-hover">
                     <div className="aspect-video overflow-hidden bg-[#f0f0f0]">
                       <img
                         src={item.image}
@@ -82,27 +81,24 @@ export default function Home() {
                     </div>
                     <div className="p-4">
                       <p className="text-xs text-[#999] mb-2">{item.date}</p>
-                      <h4 className="font-bold text-[#333] line-clamp-2 mb-3">{item.title}</h4>
-                      <Link href="#" className="text-[#1176d4] text-sm font-medium hover:text-[#2054a8] transition">
-                        詳しく読む →
-                      </Link>
+                      <h4 className="font-bold text-[#333] text-sm line-clamp-2">{item.title}</h4>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="text-center mt-8">
+              <div className="text-center mt-10">
                 <Link href="/news" className="btn-primary">
                   もっとみる
                 </Link>
               </div>
             </section>
 
-            {/* Achievements Section */}
-            <section className="mb-12">
+            {/* Achievements Section - 3 columns on PC */}
+            <section className="mb-16">
               <h2 className="section-heading">実績</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {achievementItems.map((item, idx) => (
-                  <div key={idx} className="bg-white rounded overflow-hidden card-hover border border-[#eeeeee]">
+                  <div key={idx} className="bg-white rounded overflow-hidden card-hover">
                     <div className="aspect-video overflow-hidden bg-[#f0f0f0]">
                       <img
                         src={item.image}
@@ -112,15 +108,12 @@ export default function Home() {
                     </div>
                     <div className="p-4">
                       <p className="text-xs text-[#999] mb-2">{item.date}</p>
-                      <h4 className="font-bold text-[#333] line-clamp-2 mb-3">{item.title}</h4>
-                      <Link href="#" className="text-[#1176d4] text-sm font-medium hover:text-[#2054a8] transition">
-                        詳しく見る →
-                      </Link>
+                      <h4 className="font-bold text-[#333] text-sm line-clamp-2">{item.title}</h4>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="text-center mt-8">
+              <div className="text-center mt-10">
                 <Link href="/achievements" className="btn-primary">
                   もっと見る
                 </Link>
@@ -128,19 +121,19 @@ export default function Home() {
             </section>
 
             {/* YouTube Section */}
-            <section className="mb-12">
+            <section className="mb-16">
               <h2 className="section-heading">岡本みつなりチャンネル</h2>
               <div className="bg-white border border-[#eeeeee] rounded p-8 text-center">
                 <p className="text-[#666] mb-6">YouTubeで最新の活動をご覧いただけます</p>
-                <a href="#" className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium transition">
+                <a href="https://www.youtube.com/" className="inline-block bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 font-medium transition">
                   YouTubeをご覧になる
                 </a>
               </div>
             </section>
           </div>
 
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
+          {/* Sidebar - 304px width */}
+          <div className="w-full lg:w-[304px] flex-shrink-0">
             <Sidebar />
           </div>
         </div>
