@@ -167,10 +167,35 @@ export default function Home() {
               </div>
             </section>
 
-            {/* YouTube Section */}
+            {/* 深夜ライブ Banner Section */}
             <section style={{ marginBottom: '64px' }}>
               <h2 className="section-heading">岡本みつなりチャンネル</h2>
-              <div className="text-center" style={{ padding: '32px 0' }}>
+              {/* Live Thumbnail Banner */}
+              <a
+                href="https://www.youtube.com/@TheOfficeMO"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+                style={{ marginBottom: '24px' }}
+              >
+                <div className="overflow-hidden" style={{ borderRadius: '4px' }}>
+                  <img
+                    src="/okamoto-live.jpg"
+                    alt="岡本みつなりの深夜ライブ Vol.1 - 2026/4/24(金) 22:00 ON AIR"
+                    className="w-full h-auto block group-hover:opacity-90 transition"
+                  />
+                </div>
+                <p style={{
+                  fontSize: '15.4px',
+                  color: '#333',
+                  marginTop: '12px',
+                  lineHeight: 1.6,
+                }}>
+                  <span style={{ fontWeight: 700, color: '#2054a8' }}>元ゴールドマンサックス 衆議院議員</span>
+                  <span style={{ marginLeft: '8px' }}>岡本みつなりの深夜ライブ</span>
+                </p>
+              </a>
+              <div className="text-center" style={{ padding: '16px 0' }}>
                 <a
                   href="https://www.youtube.com/@TheOfficeMO"
                   target="_blank"
